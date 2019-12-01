@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    {% block head %}
+<title>Social Stars</title>
+{% endblock %}
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+      integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css"
+      integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css?family=Rokkitt" rel="stylesheet">
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Solway:500&display=swap" rel="stylesheet">
+
+    <link href="{% static 'social/css/postbox.css' %}" rel="stylesheet">
+    <link href="{% static 'css/master.css' %}" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container">
+            <ul class="nav navbar-nav">
+                {% if user.is_authenticated %}
+                    <li><a class="navbar-brand" href="{% url 'social:home' %}">News Feed</a> </li>
+                    <li><a class="navbar-link" href="{% url 'accounts:profile' %}">Profile</a> </li>
+                    <li><a class="navbar-link" href="{% url 'accounts:edit_profile' %}">Edit Profile</a> </li>
+                    <li><a class="navbar-link" href="{% url 'accounts:change-password' %}">Change Password</a> </li>
+                {% else %}
+                    <li><a class="navbar-brand" href="{% url 'accounts:index' %}">Social Stars</a> </li>
+                    <li><a class="navbar-link" href="{% url 'accounts:register' %}">Register</a> </li>
+                    <li><a class="navbar-link" href="{% url 'accounts:password_reset' %}">Reset Password</a> </li>
+                {% endif %}
+            </ul>
+            {% if user.is_authenticated %}
+            <ul class="nav navbar-nav navbar-right">
+            <li><a class="navbar-link" href="{% url 'accounts:logout' %}">Logout</a> </li>
+            </ul>
+            {% endif %}
+        </div>
+    </nav>
+
+<div class="container" style="height: max-content;">
+        {% block body_block %}
+        {% endblock %}
+
+</div>
+
+</body>
+<!-- Footer -->
+	<section id="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
+					<ul class="list-unstyled list-inline social text-center">
+						<li class="list-inline-item"><a href="https://github.com/rehan252">
+                            <i class="fa fa-github" aria-hidden="true"></i></a></li>
+						<li class="list-inline-item"><a href="https://www.linkedin.com/in/muhammad-rehan-3b47a3165/">
+                            <i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+						<li class="list-inline-item"><a href="https://www.facebook.com/rhn25">
+                            <i class="fa fa-facebook"></i></a></li>
+						<li class="list-inline-item"><a href="mailto:rhn.swl@gmail.com">
+                            <i class="fa fa-google-plus"></i></a></li>
+						<li class="list-inline-item"><a href="https://stackoverflow.com/users/6790203/muhammad-rehan"
+                                                        target="_blank"><i class="fa fa-stack-overflow"></i></a></li>
+					</ul>
+				</div>
+				</hr>
+			</div>
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white"
+                style="color: wheat; font-size: 1.4em;  ">
+					<p><u><a href="#">Social Stars</a>
+                        </u> is a social site with Basic Functionality</p>
+					<p class="h6">&copy All right Reversed.<a class="text-green ml-2" href="rehancv.pythonanywhere.com"
+                                                              target="_blank">M.Rehan</a></p>
+				</div>
+				</hr>
+			</div>
+		</div>
+	</section>
+	<!-- ./Footer -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</html>

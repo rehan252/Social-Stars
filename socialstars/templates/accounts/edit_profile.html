@@ -1,0 +1,17 @@
+{% extends 'accounts/base.html' %}
+{% load bootstrap4 %}
+
+{% block head %}
+<title>Edit Profile | Social Stars</title>
+{% endblock %}
+
+{% block body_block %}
+
+<div class="container">
+      <form method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          {% bootstrap_form form %}
+          <input type="submit" value="Update">
+      </form>
+</div>
+{% endblock %}

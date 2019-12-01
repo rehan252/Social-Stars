@@ -1,0 +1,30 @@
+{% extends 'accounts/base.html' %}
+
+{% block head %}
+<title>Profile | Social Stars</title>
+{% endblock %}
+
+{% block body_block %}
+
+<div class="col-md-8">
+    <img src="{{ user.userprofileinfo.profile_image.url }}" width="500" height="500">
+    <h1>Welcome *{{ user.username }}</h1>
+    <p>Name: {{ user.first_name }} {{user.last_name}}</p>
+    <p>Email: {{ user.email }}</p>
+    <p>Bio: {{ user.userprofileinfo.bio }}</p>
+    <p>Birth Date: {{ user.userprofileinfo.birth_date }}</p>
+</div>
+<div class="col-md-4">
+    {% if pk %}
+        {% if not is_friend %}
+
+            <a href="{% url 'social:connect' operation='add' pk=user.pk %}" style="margin-left: 10%;">
+             <button type="button" class="btn btn-success">+Add Friend</button>
+            </a>
+        {% elif is_friend %}
+            <a href="{% url 'social:connect' operation='remove' pk=friend.pk %}" style="margin-left: 10%;">
+                <button type="button" class="btn btn-warning">Remove Friend</button></a>
+        {% endif %}
+    {% endif %}
+</div>
+{% endblock %}

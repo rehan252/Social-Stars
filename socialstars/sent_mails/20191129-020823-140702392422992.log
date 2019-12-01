@@ -1,0 +1,25 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: Password reset on 127.0.0.1:8000
+From: webmaster@localhost
+To: rhn.swl@gmail.com
+Date: Fri, 29 Nov 2019 02:08:23 -0000
+Message-ID: 
+ <157499330326.12067.2043126400817572502@muhammad-HP-EliteBook-8570p>
+
+
+You're receiving this email because you requested a password reset for your user account at 127.0.0.1:8000.
+
+Please go to the following page and choose a new password:
+
+http://127.0.0.1:8000/reset-password/confirm/Mg/5bu-69bbf07a41d1e1f791e9
+
+Your username, in case you’ve forgotten: rehan
+
+Thanks for using our site!
+
+The 127.0.0.1:8000 team
+
+
+-------------------------------------------------------------------------------
