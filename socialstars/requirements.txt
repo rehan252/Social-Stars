@@ -1,7 +1,7 @@
 argon2-cffi==19.2.0
 beautifulsoup4==4.8.1
 cffi==1.13.2
-Django==2.2.7
+Django==2.2.22
 django-bootstrap4==1.0.1
 Pillow==6.2.1
 pycparser==2.19
